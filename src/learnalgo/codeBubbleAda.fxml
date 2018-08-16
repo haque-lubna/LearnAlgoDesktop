@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnalgo.CodeBubbleAdaController">
+   <children>
+      <TextArea editable="false" prefHeight="600.0" prefWidth="700.0" text="generic&#10; type Element is private;&#10; with function &quot;=&quot; (E1, E2 : Element) return Boolean is &lt;&gt;;&#10; with function &quot;&lt;&quot; (E1, E2 : Element) return Boolean is &lt;&gt;;&#10; type Index is (&lt;&gt;);&#10; type Arr is array (Index range &lt;&gt;) of Element;&#10;procedure Bubble_Sort (A : in out Arr);&#10; &#10;procedure Bubble_Sort (A : in out Arr) is&#10; Finished : Boolean;&#10; Temp     : Element;&#10;begin&#10; loop&#10;  Finished := True;&#10;  for J in A'First .. Index'Pred (A'Last) loop&#10;   if A (Index'Succ (J)) &lt; A (J) then&#10;    Finished := False;&#10;    Temp := A (Index'Succ (J));&#10;    A (Index'Succ (J)) := A (J);&#10;    A (J) := Temp;&#10;   end if;&#10;  end loop;&#10;  exit when Finished;&#10; end loop;&#10;end Bubble_Sort;&#10; &#10;--  Example of usage:&#10;with Ada.Text_IO; use Ada.Text_IO;&#10;with Bubble_Sort;&#10;procedure Main is&#10; type Arr is array (Positive range &lt;&gt;) of Integer;&#10; procedure Sort is new&#10;  Bubble_Sort&#10;   (Element =&gt; Integer,&#10;    Index   =&gt; Positive,&#10;    Arr     =&gt; Arr);&#10; A : Arr := (1, 3, 256, 0, 3, 4, -1);&#10;begin&#10; Sort (A);&#10; for J in A'Range loop&#10;  Put (Integer'Image (A (J)));&#10; end loop;&#10; New_Line;&#10;end Main;&#10;">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </TextArea>
+      <Button layoutX="615.0" layoutY="568.0" mnemonicParsing="false" onAction="#backButtonAction" text="BACK" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnalgo.CodeInsertionAdaController">
+   <children>
+      <TextArea editable="false" prefHeight="600.0" prefWidth="700.0" text="type Data_Array is array(Natural range &lt;&gt;) of Integer;&#10; &#10;procedure Insertion_Sort(Item : in out Data_Array) is&#10;   First : Natural := Item'First;&#10;   Last  : Natural := Item'Last;&#10;   Value : Integer;&#10;   J     : Integer;&#10;begin&#10;   for I in (First + 1)..Last loop&#10;      Value := Item(I);&#10;      J := I - 1;&#10;      while J in Item'range and then Item(J) &gt; Value loop&#10;         Item(J + 1) := Item(J);&#10;         J := J - 1;&#10;      end loop;&#10;      Item(J + 1) := Value;&#10;   end loop;&#10;end Insertion_Sort;&#10;">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </TextArea>
+      <Button layoutX="635.0" layoutY="581.0" mnemonicParsing="false" onAction="#backButtonAction" text="BACK" />
+   </children>
+</AnchorPane>

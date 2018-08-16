@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnalgo.CodeSelectionAdaController">
+   <children>
+      <TextArea editable="false" prefHeight="600.0" prefWidth="700.0" text="with Ada.Text_IO;  use Ada.Text_IO;&#10; &#10;procedure Test_Selection_Sort is&#10; &#10;   type Integer_Array is array (Positive range &lt;&gt;) of Integer;&#10;   procedure Sort (A : in out Integer_Array) is&#10;      Min  : Positive;&#10;      Temp : Integer;&#10;   begin&#10;      for I in A'First..A'Last - 1 loop&#10;         Min := I;&#10;         for J in I + 1..A'Last loop&#10;            if A (Min) &gt; A (J) then&#10;               Min := J;&#10;            end if;&#10;         end loop;&#10;         if Min /= I then&#10;            Temp    := A (I);&#10;            A (I)   := A (Min);&#10;            A (Min) := Temp;&#10;         end if;&#10;      end loop;&#10;   end Sort;&#10; &#10;   A : Integer_Array := (4, 9, 3, -2, 0, 7, -5, 1, 6, 8);&#10;begin&#10;   Sort (A);&#10;   for I in A'Range loop&#10;      Put (Integer'Image (A (I)) &amp; &quot; &quot;);&#10;   end loop;&#10;end Test_Selection_Sort;&#10;">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </TextArea>
+      <Button layoutX="625.0" layoutY="578.0" mnemonicParsing="false" onAction="#backButtonAction" text="BACK" />
+   </children>
+</AnchorPane>

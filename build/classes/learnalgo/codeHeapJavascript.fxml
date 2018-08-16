@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnalgo.CodeHeapJavascriptController">
+   <children>
+      <TextArea editable="false" layoutX="4.0" layoutY="4.0" prefHeight="600.0" prefWidth="700.0" text="function swap(data, i, j) {&#10;    var tmp = data[i];&#10;    data[i] = data[j];&#10;    data[j] = tmp;&#10;}&#10; &#10; function heap_sort(arr) {&#10;    put_array_in_heap_order(arr);&#10;    var end = arr.length - 1;&#10;    while(end &gt; 0) {&#10;        swap(arr, 0, end);&#10;        sift_element_down_heap(arr, 0, end);&#10;        end -= 1&#10;    }&#10;}&#10; &#10;function put_array_in_heap_order(arr) {&#10;    var i;&#10;    i = arr.length / 2 - 1;&#10;    i = Math.floor(i);&#10;    while (i &gt;= 0) {&#10;        sift_element_down_heap(arr, i, arr.length);&#10;        i -= 1;&#10;    }&#10;}&#10; &#10;function sift_element_down_heap(heap, i, max) {&#10;    var i_big, c1, c2;&#10;    while(i &lt; max) {&#10;        i_big = i;&#10;        c1 = 2*i + 1;&#10;        c2 = c1 + 1;&#10;        if (c1 &lt; max &amp;&amp; heap[c1] &gt; heap[i_big])&#10;            i_big = c1;&#10;        if (c2 &lt; max &amp;&amp; heap[c2] &gt; heap[i_big])&#10;            i_big = c2;&#10;        if (i_big == i) return;&#10;        swap(heap,i, i_big);&#10;        i = i_big;&#10;    }&#10;}&#10; &#10;arr = [12, 11, 15, 10, 9, 1, 2, 3, 13, 14, 4, 5, 6, 7, 8,];&#10;heap_sort(arr);&#10;alert(arr);&#10;">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </TextArea>
+      <Button layoutX="635.0" layoutY="581.0" mnemonicParsing="false" onAction="#backButtonAction" text="BACK" />
+   </children>
+</AnchorPane>

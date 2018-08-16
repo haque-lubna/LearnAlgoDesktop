@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="700.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="learnalgo.CodeDijkstraCsharpController">
+   <children>
+      <TextArea editable="false" prefHeight="600.0" prefWidth="700.0" text="using System;&#10;using System.Collections.Generic;&#10;using System.Linq;&#10;using System.Text;&#10;using System.Diagnostics;&#10; &#10;namespace DijkstraAlgorithm&#10;{&#10;    class Dijkstra&#10;    {&#10; &#10;        private static int MinimumDistance(int[] distance, bool[] shortestPathTreeSet, int verticesCount)&#10;        {&#10;            int min = int.MaxValue;&#10;            int minIndex = 0;&#10; &#10;            for (int v = 0; v &lt; verticesCount; ++v)&#10;            {&#10;                if (shortestPathTreeSet[v] == false &amp;&amp; distance[v] &lt;= min)&#10;                {&#10;                    min = distance[v];&#10;                    minIndex = v;&#10;                }&#10;            }&#10; &#10;            return minIndex;&#10;        }&#10; &#10;        private static void Print(int[] distance, int verticesCount)&#10;        {&#10;            Console.WriteLine(&quot;Vertex    Distance from source&quot;);&#10; &#10;            for (int i = 0; i &lt; verticesCount; ++i)&#10;                Console.WriteLine(&quot;{0}\t  {1}&quot;, i, distance[i]);&#10;        }&#10; &#10;        public static void DijkstraAlgo(int[,] graph, int source, int verticesCount)&#10;        {&#10;            int[] distance = new int[verticesCount];&#10;            bool[] shortestPathTreeSet = new bool[verticesCount];&#10; &#10;            for (int i = 0; i &lt; verticesCount; ++i)&#10;            {&#10;                distance[i] = int.MaxValue;&#10;                shortestPathTreeSet[i] = false;&#10;            }&#10; &#10;            distance[source] = 0;&#10; &#10;            for (int count = 0; count &lt; verticesCount - 1; ++count)&#10;            {&#10;                int u = MinimumDistance(distance, shortestPathTreeSet, verticesCount);&#10;                shortestPathTreeSet[u] = true;&#10; &#10;                for (int v = 0; v &lt; verticesCount; ++v)&#10;                    if (!shortestPathTreeSet[v] &amp;&amp; Convert.ToBoolean(graph[u, v]) &amp;&amp; distance[u] != int.MaxValue &amp;&amp; distance[u] + graph[u, v] &lt; distance[v])&#10;                        distance[v] = distance[u] + graph[u, v];&#10;            }&#10; &#10;            Print(distance, verticesCount);&#10;        }&#10; &#10;        static void Main(string[] args)&#10;        {&#10;            int[,] graph =  {&#10;                         { 0, 6, 0, 0, 0, 0, 0, 9, 0 },&#10;                         { 6, 0, 9, 0, 0, 0, 0, 11, 0 },&#10;                         { 0, 9, 0, 5, 0, 6, 0, 0, 2 },&#10;                         { 0, 0, 5, 0, 9, 16, 0, 0, 0 },&#10;                         { 0, 0, 0, 9, 0, 10, 0, 0, 0 },&#10;                         { 0, 0, 6, 0, 10, 0, 2, 0, 0 },&#10;                         { 0, 0, 0, 16, 0, 2, 0, 1, 6 },&#10;                         { 9, 11, 0, 0, 0, 0, 1, 0, 5 },&#10;                         { 0, 0, 2, 0, 0, 0, 6, 5, 0 }&#10;                            };&#10; &#10;            DijkstraAlgo(graph, 0, 9);&#10;        }&#10;    }&#10;}">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </TextArea>
+      <Button layoutX="631.0" layoutY="558.0" mnemonicParsing="false" onAction="#backButtonAction" text="BACK" />
+   </children>
+</AnchorPane>

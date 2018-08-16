@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnalgo.CodeHeapAdaController">
+   <children>
+      <TextArea editable="false" layoutY="4.0" prefHeight="600.0" prefWidth="700.0" text="generic&#10;   type Element_Type is private;&#10;   type Index_Type is (&lt;&gt;);&#10;   type Collection is array(Index_Type range &lt;&gt;) of Element_Type;&#10;   with function &quot;&lt;&quot; (Left, right : element_type) return boolean is &lt;&gt;;&#10;procedure Generic_Heapsort(Item : in out Collection);&#10;procedure Generic_Heapsort(Item : in out Collection) is&#10;   procedure Swap(Left : in out Element_Type; Right : in out Element_Type) is&#10;      Temp : Element_Type := Left;&#10;   begin&#10;      Left := Right;&#10;      Right := Temp;&#10;   end Swap;&#10;   procedure Sift_Down(Item : in out Collection) is&#10;      Root : Integer := Index_Type'Pos(Item'First);&#10;      Child : Integer := Index_Type'Pos(Item'Last);&#10;      Last : Integer := Index_Type'Pos(Item'Last);&#10;   begin&#10;      while Root * 2 + 1 &lt;= Last loop&#10;         Child := Root * 2 + 1;&#10;         if Child + 1 &lt;= Last and then Item(index_Type'Val(Child)) &lt; Item(Index_Type'Val(Child + 1)) then&#10;            Child := Child + 1;&#10;         end if;&#10;         if Item(Index_Type'Val(Root)) &lt; Item(Index_Type'Val(Child)) then&#10;            Swap(Item(Index_Type'Val(Root)), Item(Index_Type'Val(Child)));&#10;            Root := Child;&#10;         else&#10;            exit;&#10;         end if;&#10;      end loop;&#10;   end Sift_Down;&#10; &#10;   procedure Heapify(Item : in out Collection) is&#10;      First_Pos : Integer := Index_Type'Pos(Index_Type'First);&#10;      Last_Pos  : Integer := Index_Type'Pos(Index_type'Last);&#10;      Start : Index_type := Index_Type'Val((Last_Pos - First_Pos + 1) / 2);&#10;   begin&#10;      loop&#10;         Sift_Down(Item(Start..Item'Last));&#10;         if Start &gt; Index_Type'First then&#10;            Start := Index_Type'Pred(Start);&#10;         else&#10;            exit;&#10;         end if;&#10;      end loop;&#10;   end Heapify;&#10;   Last_Index : Index_Type := Index_Type'Last;&#10;begin&#10;   Heapify(Item);&#10;   while Last_Index &gt; Index_Type'First loop&#10;      Swap(Item(Last_Index), Item(Item'First));&#10;      Last_Index := Index_Type'Pred(Last_Index);&#10;      Sift_Down(Item(Item'First..Last_Index));&#10;   end loop;&#10; &#10;end Generic_Heapsort;&#10;">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </TextArea>
+      <Button layoutX="635.0" layoutY="581.0" mnemonicParsing="false" onAction="#backButtonAction" text="BACK" />
+   </children>
+</AnchorPane>

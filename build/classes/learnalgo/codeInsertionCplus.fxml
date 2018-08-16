@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnalgo.CodeInsertionCplusController">
+   <children>
+      <TextArea editable="false" layoutX="14.0" layoutY="17.0" prefHeight="600.0" prefWidth="700.0" text="#include &lt;iostream&gt;&#10;&#10;using namespace std;&#10;&#10;// A structure to represent a node.&#10;struct list&#10;{&#10;    int data;&#10;    list *next;&#10;};&#10;&#10;// Function implementing insertion sort.&#10;list* InsertinList(list *head, int n)&#10;{&#10;    // Creating newnode and temp node.&#10;    list *newnode = new list;&#10;    list *temp = new list;&#10;&#10;    // Using newnode as the node to be inserted in the list.&#10;    newnode-&gt;data = n;&#10;    newnode-&gt;next = NULL;&#10;&#10;    // If head is null then assign new node to head.&#10;    if(head == NULL)&#10;    {&#10;        head = newnode;&#10;        return head;&#10;    }&#10;    else&#10;    {&#10;        temp = head;&#10;&#10;        // If newnode-&gt;data is lesser than head-&gt;data, then insert newnode before head.&#10;        if(newnode-&gt;data &lt; head-&gt;data)&#10;        {&#10;            newnode-&gt;next = head;&#10;            head = newnode;&#10;            return head;&#10;        }&#10;&#10;        // Traverse the list till we get value more than newnode-&gt;data.&#10;        while(temp-&gt;next != NULL)&#10;        {&#10;            if(newnode-&gt;data &lt; (temp-&gt;next)-&gt;data)&#10;                break;&#10;&#10;            temp=temp-&gt;next;&#10;        }&#10;&#10;        // Insert newnode after temp.&#10;        newnode-&gt;next = temp-&gt;next;&#10;        temp-&gt;next = newnode;&#10;        return head;&#10;    }&#10;}&#10;&#10;int main()&#10;{&#10;    int n, i, num;&#10;    // Declaring head of the linked list.&#10;    list *head = new list;&#10;    head = NULL;&#10;&#10;    cout&lt;&lt;&quot;\nEnter the number of data element to be sorted: &quot;;&#10;    cin&gt;&gt;n;&#10;&#10;    for(i = 0; i &lt; n; i++)&#10;    {&#10;        cout&lt;&lt;&quot;Enter element &quot;&lt;&lt;i+1&lt;&lt;&quot;: &quot;;&#10;        cin&gt;&gt;num;&#10;        // Inserting num in the list.&#10;        head = InsertinList(head, num);&#10;    }&#10;&#10;    // Display the sorted data.&#10;    cout&lt;&lt;&quot;\nSorted Data &quot;;&#10;    while(head != NULL)&#10;    {&#10;        cout&lt;&lt;&quot;-&gt;&quot;&lt;&lt;head-&gt;data;&#10;        head = head-&gt;next;&#10;    }&#10;&#10;    return 0;&#10;}&#10;">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </TextArea>
+      <Button layoutX="628.0" layoutY="561.0" mnemonicParsing="false" onAction="#backButtonAction" text="BACK" />
+   </children>
+</AnchorPane>

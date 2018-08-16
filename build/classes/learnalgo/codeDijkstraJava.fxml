@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="700.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="learnalgo.CodeDijkstraJavaController">
+   <children>
+      <TextArea editable="false" prefHeight="600.0" prefWidth="700.0" text="1 public class Dijkstra {&#10;  2 &#10;  3    // Dijkstra's algorithm to find shortest path from s to all other nodes&#10;  4    public static int [] dijkstra (WeightedGraph G, int s) {&#10;  5       final int [] dist = new int [G.size()];  // shortest known distance from &quot;s&quot;&#10;  6       final int [] pred = new int [G.size()];  // preceeding node in path&#10;  7       final boolean [] visited = new boolean [G.size()]; // all false initially&#10;  8 &#10;  9       for (int i=0; i&lt;dist.length; i++) {&#10; 10          dist[i] = Integer.MAX_VALUE;&#10; 11       }&#10; 12       dist[s] = 0;&#10; 13 &#10; 14       for (int i=0; i&lt;dist.length; i++) {&#10; 15          final int next = minVertex (dist, visited);&#10; 16          visited[next] = true;&#10; 17 &#10; 18          // The shortest path to next is dist[next] and via pred[next].&#10; 19 &#10; 20          final int [] n = G.neighbors (next);&#10; 21          for (int j=0; j&lt;n.length; j++) {&#10; 22             final int v = n[j];&#10; 23             final int d = dist[next] + G.getWeight(next,v);&#10; 24             if (dist[v] &gt; d) {&#10; 25                dist[v] = d;&#10; 26                pred[v] = next;&#10; 27             }&#10; 28          }&#10; 29       }&#10; 30       return pred;  // (ignore pred[s]==0!)&#10; 31    }&#10; 32 &#10; 33    private static int minVertex (int [] dist, boolean [] v) {&#10; 34       int x = Integer.MAX_VALUE;&#10; 35       int y = -1;   // graph not connected, or no unvisited vertices&#10; 36       for (int i=0; i&lt;dist.length; i++) {&#10; 37          if (!v[i] &amp;&amp; dist[i]&lt;x) {y=i; x=dist[i];}&#10; 38       }&#10; 39       return y;&#10; 40    }&#10; 41 &#10; 42    public static void printPath (WeightedGraph G, int [] pred, int s, int e) {&#10; 43       final java.util.ArrayList path = new java.util.ArrayList();&#10; 44       int x = e;&#10; 45       while (x!=s) {&#10; 46          path.add (0, G.getLabel(x));&#10; 47          x = pred[x];&#10; 48       }&#10; 49       path.add (0, G.getLabel(s));&#10; 50       System.out.println (path);&#10; 51    }&#10; 52 &#10; 53 }">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </TextArea>
+      <Button layoutX="631.0" layoutY="558.0" mnemonicParsing="false" onAction="#backButtonAction" text="BACK" />
+   </children>
+</AnchorPane>

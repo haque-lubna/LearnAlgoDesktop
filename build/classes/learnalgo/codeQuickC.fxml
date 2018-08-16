@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnalgo.CodeQuickCController">
+   <children>
+      <TextArea editable="false" layoutX="7.0" layoutY="9.0" prefHeight="600.0" prefWidth="700.0" text="#include &lt;stdio.h&gt;&#10;&#10;void quickSort( int[], int, int);&#10;int partition( int[], int, int);&#10;&#10;&#10;void main()&#10;{&#10;    int a[] = { 7, 12, 1, -2, 0, 15, 4, 11, 9};&#10;&#10;    int i;&#10;    printf(&quot;\n\nUnsorted array is:  &quot;);&#10;    for(i = 0; i &lt; 9; ++i)&#10;        printf(&quot; %d &quot;, a[i]);&#10;&#10;    quickSort( a, 0, 8);&#10;&#10;    printf(&quot;\n\nSorted array is:  &quot;);&#10;    for(i = 0; i &lt; 9; ++i)&#10;        printf(&quot; %d &quot;, a[i]);&#10;&#10;}&#10;&#10;&#10;&#10;void quickSort( int a[], int l, int r)&#10;{&#10;    int j;&#10;&#10;    if( l &lt; r )&#10;    {&#10;        // divide and conquer&#10;        j = partition( a, l, r);&#10;        quickSort( a, l, j-1);&#10;        quickSort( a, j+1, r);&#10;    }&#10;&#10;}&#10;&#10;&#10;&#10;int partition( int a[], int l, int r)&#10;{&#10;    int pivot, i, j, t;&#10;    pivot = a[l];&#10;    i = l;&#10;    j = r+1;&#10;&#10;    while( 1)&#10;    {&#10;        do ++i;&#10;        while( a[i] &lt;= pivot &amp;&amp; i &lt;= r );&#10;        do --j;&#10;        while( a[j] &gt; pivot );&#10;        if( i &gt;= j ) break;&#10;        t = a[i];&#10;        a[i] = a[j];&#10;        a[j] = t;&#10;    }&#10;    t = a[l];&#10;    a[l] = a[j];&#10;    a[j] = t;&#10;    return j;&#10;}&#10;">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </TextArea>
+      <Button layoutX="614.0" layoutY="553.0" mnemonicParsing="false" onAction="#backButtonAction" text="BACK" />
+   </children>
+</AnchorPane>

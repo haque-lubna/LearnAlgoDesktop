@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: #D8BFD8;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnalgo.QuickSortController">
+   <children>
+      <Label layoutX="277.0" layoutY="34.0" prefHeight="45.0" prefWidth="189.0" text="Quick sort">
+         <font>
+            <Font name="System Bold Italic" size="30.0" />
+         </font>
+      </Label>
+      <Button layoutX="94.0" layoutY="127.0" mnemonicParsing="false" onAction="#visuQuickButtonAction" prefHeight="44.0" prefWidth="135.0" style="-fx-background-color: #FFFF;" text="visualization" textFill="#0a0303">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <Button layoutX="189.0" layoutY="205.0" mnemonicParsing="false" onAction="#desButtonAction" prefHeight="44.0" prefWidth="135.0" style="-fx-background-color: #FFFF;" text="description" textFill="#171111">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <Button layoutX="283.0" layoutY="300.0" mnemonicParsing="false" onAction="#codeQuickButtonAction" prefHeight="44.0" prefWidth="135.0" style="-fx-background-color: #FFFF;" text="code" textFill="#171111">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font></Button>
+      <Button layoutX="362.0" layoutY="395.0" mnemonicParsing="false" onAction="#linkQuickButtonAction" prefHeight="44.0" prefWidth="135.0" style="-fx-background-color: #FFFF;" text="Links" textFill="#171414">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font></Button>
+      <Button layoutX="430.0" layoutY="500.0" mnemonicParsing="false" onAction="#backButtonAction" prefHeight="44.0" prefWidth="135.0" style="-fx-background-color: #FFFF;" text="BACK">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font></Button>
+   </children>
+</AnchorPane>

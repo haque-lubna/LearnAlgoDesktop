@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnalgo.CodeBubbleCplusController">
+   <children>
+      <TextArea editable="false" layoutY="7.0" prefHeight="600.0" prefWidth="700.0" text="#include&lt;iostream.h&gt;&#10;#include&lt;conio.h&gt;&#10;using namespace std;&#10;&#10;main()&#10;{&#10;&#10;int hold;&#10;int array[5];&#10;cout&lt;&lt;&quot;Enter 5 numbers: &quot;&lt;&lt;endl;&#10;for(int i=0; i&lt;5; i++)&#10;{&#10;cin&gt;&gt;array[i]; &#10;} &#10;cout&lt;&lt;endl; &#10;cout&lt;&lt;&quot;Orignally entered array by the user is: &quot;&lt;&lt;endl;&#10;&#10;for(int j=0; j&lt;5; j++)&#10;{&#10;cout&lt;&lt;array[j];&#10;cout&lt;&lt;endl; &#10;} &#10;cout&lt;&lt;endl;&#10;for(int i=0; i&lt;4; i++)&#10;{&#10;for(int j=0; j&lt;4; j++)&#10;{&#10;if(array[j]&gt;array[j+1])&#10;{&#10;hold=array[j];&#10;array[j]=array[j+1];&#10;array[j+1]=hold; &#10;}&#10;} &#10;} &#10;cout&lt;&lt;&quot;Sorted Array is: &quot;&lt;&lt;endl;&#10;for(int i=0; i&lt;5; i++)&#10;{&#10;cout&lt;&lt;array[i]&lt;&lt;endl; &#10;} &#10;&#10;getch();&#10;}&#10;">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </TextArea>
+      <Button layoutX="605.0" layoutY="558.0" mnemonicParsing="false" onAction="#backButtonAction" text="BACK" />
+   </children>
+</AnchorPane>

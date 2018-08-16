@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: #D8BFD8;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnalgo.BubbleSortController">
+   <children>
+      <Label layoutX="251.0" layoutY="31.0" text="Bubble sort">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="116.0" layoutY="162.0" mnemonicParsing="false" onAction="#visuBubbleButtonAction" prefHeight="35.0" prefWidth="128.0" style="-fx-background-color: #FFF;" text="visualization" textFill="#0a0303">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <Button layoutX="188.0" layoutY="233.0" mnemonicParsing="false" onAction="#desButtonAction" prefHeight="35.0" prefWidth="128.0" style="-fx-background-color: #FFF;" text="description" textFill="#171111">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Button>
+      <Button layoutX="265.0" layoutY="310.0" mnemonicParsing="false" onAction="#codeBubbleButtonAction" prefHeight="35.0" prefWidth="128.0" style="-fx-background-color: #FFF;" text="code" textFill="#171111">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
+      <Button layoutX="347.0" layoutY="391.0" mnemonicParsing="false" onAction="#linkBubbleButtonAction" prefHeight="35.0" prefWidth="128.0" style="-fx-background-color: #FFF;" text="Links" textFill="#171414">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font></Button>
+      <Button layoutX="463.0" layoutY="474.0" mnemonicParsing="false" onAction="#backButtonAction" prefHeight="35.0" prefWidth="121.0" style="-fx-background-color: #FFF;" text="BACK">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+   </children>
+</AnchorPane>

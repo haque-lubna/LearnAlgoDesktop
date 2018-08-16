@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: #D8BFD8;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnalgo.QuickLinkController">
+   <children>
+      <Button layoutX="539.0" layoutY="495.0" mnemonicParsing="false" onAction="#backButtonAction" prefHeight="42.0" prefWidth="114.0" style="-fx-background-color: #FFFF;" text="BACK">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Hyperlink layoutX="24.0" layoutY="88.0" prefHeight="23.0" prefWidth="556.0" text="https://www.hackerearth.com/practice/algorithms/sorting/quick-sort/tutorial" />
+      <Hyperlink layoutX="24.0" layoutY="137.0" prefHeight="23.0" prefWidth="556.0" text="http://www.algolist.net/Algorithms/Sorting/Quicksort" />
+      <Hyperlink layoutX="24.0" layoutY="182.0" prefHeight="61.0" prefWidth="565.0" text="https://www.khanacademy.org/computing/computer-science/algorithms/quick-sort/a/overview-of-quicksort" wrapText="true" />
+      <Label layoutX="243.0" layoutY="38.0" text="Quick sort Links">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="24.0" layoutY="283.0" text="Video Links:">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <Hyperlink layoutX="24.0" layoutY="243.0" prefHeight="23.0" prefWidth="556.0" text="https://www.geeksforgeeks.org/quick-sort/" />
+      <Hyperlink layoutX="24.0" layoutY="328.0" prefHeight="23.0" prefWidth="556.0" text="https://www.youtube.com/watch?v=3OLTJlwyIqQ" />
+      <Hyperlink layoutX="29.0" layoutY="369.0" prefHeight="23.0" prefWidth="556.0" text="https://www.youtube.com/watch?v=-7pzsM6gxgY" />
+      <Hyperlink layoutX="29.0" layoutY="414.0" prefHeight="23.0" prefWidth="556.0" text="https://www.youtube.com/watch?v=9qYD3Uag3Jk" />
+      <Hyperlink layoutX="29.0" layoutY="451.0" prefHeight="23.0" prefWidth="556.0" text="https://www.youtube.com/watch?v=MZaf_9IZCrc" />
+   </children>
+</AnchorPane>

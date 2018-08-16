@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="700.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="learnalgo.CodeDijkstraCplusController">
+   <children>
+      <TextArea editable="false" layoutY="4.0" prefHeight="600.0" prefWidth="700.0" text="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;  &#10;using namespace std;&#10;&#10;#define GRAPHSIZE 2048 &#10;#define INFINITY GRAPHSIZE*GRAPHSIZE &#10;#define MAX(a, b) ((a &gt; b) ? (a) : (b)) &#10;  &#10;int e; //The number of edges in the graph&#10;int n; //The number of nodes in the graph&#10;int dist[GRAPHSIZE][GRAPHSIZE]; &#10;int d[GRAPHSIZE]; &#10;  &#10;void output() { &#10;    int i; &#10;    for (i = 1; i &lt;= n; ++i) &#10;        cout &lt;&lt; i; //just for reference until i finish&#10;    cout &lt;&lt; endl;&#10;    for (i = 1; i &lt;= n; ++i) { &#10;        cout &lt;&lt; d[i]; //just for reference until i finish&#10;    } &#10;    cout &lt;&lt; endl;; &#10;} &#10;  &#10;void dijkstra(int x) { &#10;    int i, k, small; &#10;    int visited[GRAPHSIZE]; &#10;  &#10;    for (i = 1; i &lt;= n; ++i) { &#10;        d[i] = INFINITY; &#10;        visited[i] = 0; //element i hasn't been visited&#10;    } &#10;  &#10;    d[x] = 0; &#10;  &#10;    for (k = 1; k &lt;= n; ++k) { &#10;        small = -1; &#10;        for (i = 1; i &lt;= n; ++i) &#10;            if (!visited[i] &amp;&amp; ((small == -1) || (d[i] &lt; d[small]))) &#10;                small = i; &#10;  &#10;        visited[small] = 1; &#10;  &#10;        for (i = 1; i &lt;= n; ++i) &#10;            if (dist[small][i]) &#10;                if (d[small] + dist[small][i] &lt; d[i])  &#10;                    d[i] = d[small] + dist[small][i]; &#10;    } &#10;} &#10;  &#10;int main(int argc, char *argv[]) { &#10;    int i, j; &#10;    int a, b, c;&#10;  &#10;    FILE *fin = fopen(&quot;dist.txt&quot;, &quot;r&quot;);  //open the file&#10;    fscanf(fin, &quot;%d&quot;, &amp;e); &#10;    for (i = 0; i &lt; e; ++i) &#10;        for (j = 0; j &lt; e; ++j) &#10;            dist[i][j] = 0; //set initial dist to zero&#10;    n = -1; &#10;    for (i = 0; i &lt; e; ++i) { &#10;        fscanf(fin, &quot;%d%d%d&quot;, &amp;a, &amp;b, &amp;c); &#10;        dist[a][b] = c; &#10;        n = MAX(a, MAX(b, n)); &#10;    } &#10;    fclose(fin); &#10;  &#10;    dijkstra(1); &#10;  &#10;    output(); &#10;&#10;    cin &gt;&gt; j;&#10;    return 0; &#10;}">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </TextArea>
+      <Button layoutX="631.0" layoutY="558.0" mnemonicParsing="false" onAction="#backButtonAction" text="BACK" />
+   </children>
+</AnchorPane>

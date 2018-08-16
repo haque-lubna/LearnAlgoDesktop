@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnalgo.CodeQuickJavaController">
+   <children>
+      <TextArea editable="false" layoutX="7.0" layoutY="9.0" prefHeight="600.0" prefWidth="700.0" text="package com.java2novice.sorting;&#10; &#10;public class MyQuickSort {&#10;     &#10;    private int array[];&#10;    private int length;&#10; &#10;    public void sort(int[] inputArr) {&#10;         &#10;        if (inputArr == null || inputArr.length == 0) {&#10;            return;&#10;        }&#10;        this.array = inputArr;&#10;        length = inputArr.length;&#10;        quickSort(0, length - 1);&#10;    }&#10; &#10;    private void quickSort(int lowerIndex, int higherIndex) {&#10;         &#10;        int i = lowerIndex;&#10;        int j = higherIndex;&#10;        // calculate pivot number, I am taking pivot as middle index number&#10;        int pivot = array[lowerIndex+(higherIndex-lowerIndex)/2];&#10;        // Divide into two arrays&#10;        while (i &lt;= j) {&#10;            /**&#10;             * In each iteration, we will identify a number from left side which &#10;             * is greater then the pivot value, and also we will identify a number &#10;             * from right side which is less then the pivot value. Once the search &#10;             * is done, then we exchange both numbers.&#10;             */&#10;            while (array[i] &lt; pivot) {&#10;                i++;&#10;            }&#10;            while (array[j] &gt; pivot) {&#10;                j--;&#10;            }&#10;            if (i &lt;= j) {&#10;                exchangeNumbers(i, j);&#10;                //move index to next position on both sides&#10;                i++;&#10;                j--;&#10;            }&#10;        }&#10;        // call quickSort() method recursively&#10;        if (lowerIndex &lt; j)&#10;            quickSort(lowerIndex, j);&#10;        if (i &lt; higherIndex)&#10;            quickSort(i, higherIndex);&#10;    }&#10; &#10;    private void exchangeNumbers(int i, int j) {&#10;        int temp = array[i];&#10;        array[i] = array[j];&#10;        array[j] = temp;&#10;    }&#10;     &#10;    public static void main(String a[]){&#10;         &#10;        MyQuickSort sorter = new MyQuickSort();&#10;        int[] input = {24,2,45,20,56,75,2,56,99,53,12};&#10;        sorter.sort(input);&#10;        for(int i:input){&#10;            System.out.print(i);&#10;            System.out.print(&quot; &quot;);&#10;        }&#10;    }&#10;}&#10;&#10;">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </TextArea>
+      <Button layoutX="629.0" layoutY="561.0" mnemonicParsing="false" onAction="#backButtonAction" text="BACK" />
+   </children>
+</AnchorPane>

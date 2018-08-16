@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnalgo.CodeInsertionKotlinController">
+   <children>
+      <TextArea editable="false" prefHeight="600.0" prefWidth="700.0" text="fun insertionSort(array: IntArray) {&#10;    for (index in 1 until array.size) {&#10;        val value = array[index]&#10;        var subIndex = index - 1&#10;        while (subIndex &gt;= 0 &amp;&amp; array[subIndex] &gt; value) {&#10;            array[subIndex + 1] = array[subIndex]&#10;            subIndex--&#10;        }&#10;        array[subIndex + 1] = value&#10;    }&#10;}&#10; &#10;fun main(args: Array&lt;String&gt;) {&#10;    val numbers = intArrayOf(5, 2, 3, 17, 12, 1, 8, 3, 4, 9, 7)&#10; &#10;    fun printArray(message: String, array: IntArray) = with(array) {&#10;        print(&quot;$message [&quot;)&#10;        forEachIndexed { index, number -&gt;&#10;            print(if (index == lastIndex) number else &quot;$number, &quot;)&#10;        }&#10;        println(&quot;]&quot;)&#10;    }&#10; &#10;    printArray(&quot;Unsorted:&quot;, numbers)&#10;    insertionSort(numbers)&#10;    printArray(&quot;Sorted:&quot;, numbers)&#10;}&#10;">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </TextArea>
+      <Button layoutX="635.0" layoutY="581.0" mnemonicParsing="false" onAction="#backButtonAction" text="BACK" />
+   </children>
+</AnchorPane>

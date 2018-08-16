@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="700.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="learnalgo.CodeDijkstraCController">
+   <children>
+      <TextArea editable="false" layoutX="4.0" layoutY="5.0" prefHeight="600.0" prefWidth="700.0" text="#include&lt;stdio.h&gt;&#10;#include&lt;conio.h&gt;&#10;#define INFINITY 9999&#10;#define MAX 10&#10; &#10;void dijkstra(int G[MAX][MAX],int n,int startnode);&#10; &#10;int main()&#10;{&#10;    int G[MAX][MAX],i,j,n,u;&#10;    printf(&quot;Enter no. of vertices:&quot;);&#10;    scanf(&quot;%d&quot;,&amp;n);&#10;    printf(&quot;\nEnter the adjacency matrix:\n&quot;);&#10;    &#10;    for(i=0;i&lt;n;i++)&#10;        for(j=0;j&lt;n;j++)&#10;            scanf(&quot;%d&quot;,&amp;G[i][j]);&#10;    &#10;    printf(&quot;\nEnter the starting node:&quot;);&#10;    scanf(&quot;%d&quot;,&amp;u);&#10;    dijkstra(G,n,u);&#10;    &#10;    return 0;&#10;}&#10; &#10;void dijkstra(int G[MAX][MAX],int n,int startnode)&#10;{&#10; &#10;    int cost[MAX][MAX],distance[MAX],pred[MAX];&#10;    int visited[MAX],count,mindistance,nextnode,i,j;&#10;    &#10;    //pred[] stores the predecessor of each node&#10;    //count gives the number of nodes seen so far&#10;    //create the cost matrix&#10;    for(i=0;i&lt;n;i++)&#10;        for(j=0;j&lt;n;j++)&#10;            if(G[i][j]==0)&#10;                cost[i][j]=INFINITY;&#10;            else&#10;                cost[i][j]=G[i][j];&#10;    &#10;    //initialize pred[],distance[] and visited[]&#10;    for(i=0;i&lt;n;i++)&#10;    {&#10;        distance[i]=cost[startnode][i];&#10;        pred[i]=startnode;&#10;        visited[i]=0;&#10;    }&#10;    &#10;    distance[startnode]=0;&#10;    visited[startnode]=1;&#10;    count=1;&#10;    &#10;    while(count&lt;n-1)&#10;    {&#10;        mindistance=INFINITY;&#10;        &#10;        //nextnode gives the node at minimum distance&#10;        for(i=0;i&lt;n;i++)&#10;            if(distance[i]&lt;mindistance&amp;&amp;!visited[i])&#10;            {&#10;                mindistance=distance[i];&#10;                nextnode=i;&#10;            }&#10;            &#10;            //check if a better path exists through nextnode            &#10;            visited[nextnode]=1;&#10;            for(i=0;i&lt;n;i++)&#10;                if(!visited[i])&#10;                    if(mindistance+cost[nextnode][i]&lt;distance[i])&#10;                    {&#10;                        distance[i]=mindistance+cost[nextnode][i];&#10;                        pred[i]=nextnode;&#10;                    }&#10;        count++;&#10;    }&#10; &#10;    //print the path and distance of each node&#10;    for(i=0;i&lt;n;i++)&#10;        if(i!=startnode)&#10;        {&#10;            printf(&quot;\nDistance of node%d=%d&quot;,i,distance[i]);&#10;            printf(&quot;\nPath=%d&quot;,i);&#10;            &#10;            j=i;&#10;            do&#10;            {&#10;                j=pred[j];&#10;                printf(&quot;&lt;-%d&quot;,j);&#10;            }while(j!=startnode);&#10;    }&#10;}">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </TextArea>
+      <Button layoutX="621.0" layoutY="548.0" mnemonicParsing="false" onAction="#backButtonAction" text="BACK" />
+   </children>
+</AnchorPane>

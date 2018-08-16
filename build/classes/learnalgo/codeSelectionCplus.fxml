@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnalgo.CodeSelectionCplusController">
+   <children>
+      <TextArea editable="false" layoutX="4.0" prefHeight="600.0" prefWidth="700.0" text="#include &lt;algorithm&gt;&#10;#include &lt;iterator&gt;&#10;#include &lt;iostream&gt;&#10; &#10;template&lt;typename ForwardIterator&gt; void selection_sort(ForwardIterator begin,&#10;                                                       ForwardIterator end) {&#10;  for(auto i = begin; i != end; ++i) {&#10;    std::iter_swap(i, std::min_element(i, end));&#10;  }&#10;}&#10; &#10;int main() {&#10;  int a[] = {100, 2, 56, 200, -52, 3, 99, 33, 177, -199};&#10;  selection_sort(std::begin(a), std::end(a));&#10;  copy(std::begin(a), std::end(a), std::ostream_iterator&lt;int&gt;(std::cout, &quot; &quot;));&#10;  std::cout &lt;&lt; &quot;\n&quot;;&#10;}">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </TextArea>
+      <Button layoutX="605.0" layoutY="551.0" mnemonicParsing="false" onAction="#backButtonAction" text="BACK" />
+   </children>
+</AnchorPane>

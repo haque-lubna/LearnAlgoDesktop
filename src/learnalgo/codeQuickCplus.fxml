@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnalgo.CodeQuickCplusController">
+   <children>
+      <TextArea editable="false" prefHeight="600.0" prefWidth="700.0" text="#include &lt;iostream&gt;&#10;&#10;using namespace std;&#10;&#10;void quick_sort(int[],int,int);&#10;int partition(int[],int,int);&#10;&#10;int main()&#10;{&#10;    int a[50],n,i;&#10;    cout&lt;&lt;&quot;How many elements?&quot;;&#10;    cin&gt;&gt;n;&#10;    cout&lt;&lt;&quot;\nEnter array elements:&quot;;&#10;&#10;    for(i=0; i&lt;n; i++)&#10;        cin&gt;&gt;a[i];&#10;&#10;    quick_sort(a,0,n-1);&#10;    cout&lt;&lt;&quot;\nArray after sorting:&quot;;&#10;&#10;    for(i=0; i&lt;n; i++)&#10;        cout&lt;&lt;a[i]&lt;&lt;&quot; &quot;;&#10;&#10;    return 0;&#10;}&#10;&#10;void quick_sort(int a[],int l,int u)&#10;{&#10;    int j;&#10;    if(l&lt;u)&#10;    {&#10;        j=partition(a,l,u);&#10;        quick_sort(a,l,j-1);&#10;        quick_sort(a,j+1,u);&#10;    }&#10;}&#10;&#10;int partition(int a[],int l,int u)&#10;{&#10;    int v,i,j,temp;&#10;    v=a[l];&#10;    i=l;&#10;    j=u+1;&#10;&#10;    do&#10;    {&#10;        do&#10;            i++;&#10;&#10;        while(a[i]&lt;v&amp;&amp;i&lt;=u);&#10;&#10;        do&#10;            j--;&#10;        while(v&lt;a[j]);&#10;&#10;        if(i&lt;j)&#10;        {&#10;            temp=a[i];&#10;            a[i]=a[j];&#10;            a[j]=temp;&#10;        }&#10;    }&#10;    while(i&lt;j);&#10;&#10;    a[l]=a[j];&#10;    a[j]=v;&#10;&#10;    return(j);&#10;}&#10;">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </TextArea>
+      <Button layoutX="623.0" layoutY="561.0" mnemonicParsing="false" onAction="#backButtonAction" text="BACK" />
+   </children>
+</AnchorPane>

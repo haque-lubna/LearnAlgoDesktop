@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: #D8BFD8;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnalgo.DijkstraLinkController">
+   <children>
+      <Button layoutX="530.0" layoutY="497.0" mnemonicParsing="false" onAction="#backButtonAction" prefHeight="50.0" prefWidth="130.0" style="-fx-background-color: #FFFF;" text="BACK" />
+      <Hyperlink layoutX="35.0" layoutY="132.0" text="https://medium.com/basecs/finding-the-shortest-path-with-a-little-help-from-dijkstra-613149fbdc8e" />
+      <Hyperlink layoutX="35.0" layoutY="186.0" text="https://www.cs.auckland.ac.nz/software/AlgAnim/dijkstra.htmlhttps://www.cs.auckland.ac.nz/software/AlgAnim/dijkstra.html" />
+      <Hyperlink layoutX="32.0" layoutY="239.0" text="http://math.mit.edu/~rothvoss/18.304.3PM/Presentations/1-Melissa.pdf" />
+      <Label layoutX="32.0" layoutY="324.0" text="Video Links:">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Hyperlink layoutX="29.0" layoutY="364.0" text="https://www.youtube.com/watch?v=WN3Rb9wVYDY" />
+      <Hyperlink layoutX="29.0" layoutY="401.0" text="https://www.youtube.com/watch?v=Lfb8qkXzHY0" />
+      <Hyperlink layoutX="29.0" layoutY="442.0" text="https://www.youtube.com/watch?v=dS1Di2ZHl4k" />
+      <Hyperlink layoutX="29.0" layoutY="483.0" text="https://www.youtube.com/watch?v=0nVYi3o161A" />
+      <Label layoutX="219.0" layoutY="58.0" text="Dijkstra Algorithm Links">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

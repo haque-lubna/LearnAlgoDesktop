@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnalgo.CodeSelectionCController">
+   <children>
+      <TextArea editable="false" prefHeight="600.0" prefWidth="700.0" text="#include &lt;stdio.h&gt;&#10; &#10;void selection_sort (int *a, int n) {&#10;    int i, j, m, t;&#10;    for (i = 0; i &lt; n; i++) {&#10;        for (j = i, m = i; j &lt; n; j++) {&#10;            if (a[j] &lt; a[m]) {&#10;                m = j;&#10;            }&#10;        }&#10;        t = a[i];&#10;        a[i] = a[m];&#10;        a[m] = t;&#10;    }&#10;}&#10; &#10;int main () {&#10;    int a[] = {4, 65, 2, -31, 0, 99, 2, 83, 782, 1};&#10;    int n = sizeof a / sizeof a[0];&#10;    int i;&#10;    for (i = 0; i &lt; n; i++)&#10;        printf(&quot;%d%s&quot;, a[i], i == n - 1 ? &quot;\n&quot; : &quot; &quot;);&#10;    selection_sort(a, n);&#10;    for (i = 0; i &lt; n; i++)&#10;        printf(&quot;%d%s&quot;, a[i], i == n - 1 ? &quot;\n&quot; : &quot; &quot;);&#10;    return 0;&#10;}">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </TextArea>
+      <Button layoutX="615.0" layoutY="568.0" mnemonicParsing="false" onAction="#backButtonAction" text="BACK" />
+   </children>
+</AnchorPane>

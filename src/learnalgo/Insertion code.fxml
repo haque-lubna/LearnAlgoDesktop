@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: #D8BFD8;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnalgo.InsertionCodeController">
+   <children>
+      <Button layoutX="26.0" layoutY="114.0" mnemonicParsing="false" onAction="#cInsertionButtonAction" prefHeight="65.0" prefWidth="172.0" text="C">
+         <font>
+            <Font name="System Bold Italic" size="29.0" />
+         </font>
+      </Button>
+      <Button layoutX="236.0" layoutY="114.0" mnemonicParsing="false" onAction="#cPlusInsertionButtonAction" prefHeight="65.0" prefWidth="163.0" text="C++">
+         <font>
+            <Font name="System Bold Italic" size="30.0" />
+         </font>
+      </Button>
+      <Button layoutX="449.0" layoutY="114.0" mnemonicParsing="false" onAction="#javaInsertionButtonAction" prefHeight="65.0" prefWidth="163.0" text="JAVA">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Button>
+      <Button layoutX="232.0" layoutY="260.0" mnemonicParsing="false" onAction="#pythonInsertionButtonAction" prefHeight="65.0" prefWidth="172.0" text="Phython">
+         <font>
+            <Font name="System Bold Italic" size="21.0" />
+         </font>
+      </Button>
+      <Button layoutX="30.0" layoutY="415.0" mnemonicParsing="false" onAction="#kotlinInsertionButtonAction" prefHeight="65.0" prefWidth="163.0" text="Kotlin">
+         <font>
+            <Font name="System Bold Italic" size="25.0" />
+         </font>
+      </Button>
+      <Button layoutX="449.0" layoutY="260.0" mnemonicParsing="false" onAction="#javascriptInsertionButtonAction" prefHeight="65.0" prefWidth="172.0" text="JavaScript">
+         <font>
+            <Font name="System Bold Italic" size="22.0" />
+         </font>
+      </Button>
+      <Button layoutX="26.0" layoutY="260.0" mnemonicParsing="false" onAction="#cSharpInsertionButtonAction" prefHeight="65.0" prefWidth="172.0" text="C#">
+         <font>
+            <Font name="System Bold Italic" size="21.0" />
+         </font>
+      </Button>
+      <Button layoutX="231.0" layoutY="415.0" mnemonicParsing="false" onAction="#fortanInsertionButtonAction" prefHeight="65.0" prefWidth="172.0" text="Fortran">
+         <font>
+            <Font name="System Bold Italic" size="21.0" />
+         </font>
+      </Button>
+      <Button layoutX="449.0" layoutY="408.0" mnemonicParsing="false" onAction="#adaInsertionButtonAction" prefHeight="65.0" prefWidth="172.0" text="Ada">
+         <font>
+            <Font name="System Bold Italic" size="21.0" />
+         </font>
+      </Button>
+      <Label layoutX="260.0" layoutY="24.0" text="Insertion Sort">
+         <font>
+            <Font name="System Bold Italic" size="31.0" />
+         </font>
+      </Label>
+      <Button layoutX="616.0" layoutY="555.0" mnemonicParsing="false" onAction="#backButtonAction" text="BACK">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

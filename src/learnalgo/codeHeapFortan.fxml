@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnalgo.CodeHeapFortanController">
+   <children>
+      <TextArea editable="false" prefHeight="600.0" prefWidth="700.0" text="program Heapsort_Demo&#10;  implicit none&#10; &#10;  integer, parameter :: num = 20&#10;  real :: array(num)&#10; &#10;  call random_seed&#10;  call random_number(array)&#10;  write(*,*) &quot;Unsorted array:-&quot;&#10;  write(*,*) array&#10;  write(*,*)&#10;  call heapsort(array)&#10;  write(*,*) &quot;Sorted array:-&quot;&#10;  write(*,*) array&#10; &#10;contains&#10; &#10;subroutine heapsort(a)&#10; &#10;   real, intent(in out) :: a(0:)&#10;   integer :: start, n, bottom&#10;   real :: temp&#10; &#10;   n = size(a)&#10;   do start = (n - 2) / 2, 0, -1&#10;     call siftdown(a, start, n);&#10;   end do&#10; &#10;   do bottom = n - 1, 1, -1&#10;     temp = a(0)&#10;     a(0) = a(bottom)&#10;     a(bottom) = temp;&#10;     call siftdown(a, 0, bottom)&#10;   end do&#10; &#10;end subroutine heapsort&#10; &#10;subroutine siftdown(a, start, bottom)&#10; &#10;  real, intent(in out) :: a(0:)&#10;  integer, intent(in) :: start, bottom&#10;  integer :: child, root&#10;  real :: temp&#10; &#10;  root = start&#10;  do while(root*2 + 1 &lt; bottom)&#10;    child = root * 2 + 1&#10; &#10;    if (child + 1 &lt; bottom) then&#10;      if (a(child) &lt; a(child+1)) child = child + 1&#10;    end if&#10; &#10;    if (a(root) &lt; a(child)) then&#10;      temp = a(child)&#10;      a(child) = a (root)&#10;      a(root) = temp&#10;      root = child&#10;    else&#10;      return&#10;    end if  &#10;  end do      &#10; &#10;end subroutine siftdown&#10; &#10;end program Heapsort_Demo&#10;">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </TextArea>
+      <Button layoutX="635.0" layoutY="581.0" mnemonicParsing="false" onAction="#backButtonAction" text="BACK" />
+   </children>
+</AnchorPane>

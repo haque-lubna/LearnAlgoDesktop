@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnalgo.CodeSelectionFortanController">
+   <children>
+      <TextArea editable="false" prefHeight="600.0" prefWidth="700.0" text="PROGRAM SELECTION&#10; &#10;  IMPLICIT NONE&#10; &#10;  INTEGER :: intArray(10) = (/ 4, 9, 3, -2, 0, 7, -5, 1, 6, 8 /)&#10; &#10;  WRITE(*,&quot;(A,10I5)&quot;) &quot;Unsorted array:&quot;, intArray&#10;  CALL Selection_sort(intArray)&#10;  WRITE(*,&quot;(A,10I5)&quot;) &quot;Sorted array  :&quot;, intArray&#10; &#10;CONTAINS&#10; &#10;  SUBROUTINE Selection_sort(a)&#10;    INTEGER, INTENT(IN OUT) :: a(:)&#10;    INTEGER :: i, minIndex, temp&#10; &#10;    DO i = 1, SIZE(a)-1&#10;       minIndex = MINLOC(a(i:), 1) + i - 1&#10;       IF (a(i) &gt; a(minIndex)) THEN&#10;          temp = a(i)&#10;          a(i) = a(minIndex)&#10;          a(minIndex) = temp&#10;       END IF&#10;    END DO&#10;  END SUBROUTINE Selection_sort&#10; &#10;END PROGRAM SELECTION&#10;">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </TextArea>
+      <Button layoutX="625.0" layoutY="578.0" mnemonicParsing="false" onAction="#backButtonAction" text="BACK" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnalgo.CodeBubbleCsharpController">
+   <children>
+      <TextArea editable="false" layoutX="7.0" layoutY="9.0" prefHeight="600.0" prefWidth="700.0" text="using System;&#10;class bubblesort&#10;{&#10;        static void Main(string[] args)&#10;        {&#10;            int[] a = { 3, 2, 5, 4, 1 };  &#10;            int t;&#10;            Console.WriteLine(&quot;The Array is : &quot;);&#10;            for (int i = 0; i &lt; a.Length; i++)&#10;            {&#10;                Console.WriteLine(a[i]);&#10;            }&#10;            for (int j = 0; j &lt;= a.Length - 2; j++)&#10;            {&#10;                for (int i = 0; i &lt;= a.Length - 2; i++)&#10;                {&#10;                    if (a[i] &gt; a[i + 1])&#10;                    {&#10;                        t = a[i + 1];&#10;                        a[i + 1] = a[i];&#10;                        a[i] = t;&#10;                    }&#10;                }&#10;            }&#10;            Console.WriteLine(&quot;The Sorted Array :&quot;);&#10;            foreach (int aray in a)                         &#10;                Console.Write(aray + &quot; &quot;);&#10;            Console.ReadLine();&#10;        }&#10;    }&#10;&#10;&#10;">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </TextArea>
+      <Button layoutX="646.0" layoutY="568.0" mnemonicParsing="false" onAction="#backButtonAction" text="BACK" />
+   </children>
+</AnchorPane>
